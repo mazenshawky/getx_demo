@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
+      home: Home(),
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: () => const Home()),
+        GetPage(name: "/", page: () => Home()),
       ],
     );
   }
