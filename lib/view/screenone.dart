@@ -1,22 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_demo/view/home.dart';
+
+import '../controller/homecontroller.dart';
 
 class ScreenOne extends StatelessWidget {
-  const ScreenOne({Key? key}) : super(key: key);
+  ScreenOne({Key? key}) : super(key: key);
+
+  final controller = Get.put(HomeController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-        child: MaterialButton(
-          onPressed: (){
-            Get.to(() => Home());
-          },
-          color: Colors.red,
-          child: const Text('Home'),
-          textColor: Colors.white,
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: (){
+                    controller.increment();
+                  },
+                  icon: const Icon(Icons.add, size: 30),
+                ),
+                Center(
+                  child: GetBuilder<HomeController>(
+                    builder: (controller) => Text(
+                      "${controller.counter}",
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: (){
+                    controller.decrement();
+                  },
+                  icon: const Icon(Icons.remove, size: 30),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
