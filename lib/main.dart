@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_demo/view/home.dart';
+import 'package:getx_demo/view/screenone.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,10 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: () => const Home()),
+        GetPage(name: "/", page: () => const ScreenOne()),
       ],
     );
   }
