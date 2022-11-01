@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: () => const HomePage()),
+        GetPage(name: "/", page: () => HomePage()),
       ],
     );
   }

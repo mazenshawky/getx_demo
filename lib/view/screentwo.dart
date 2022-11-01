@@ -5,7 +5,7 @@ import 'package:getx_demo/controller/homecontroller.dart';
 class ScreenTwo extends StatelessWidget {
   ScreenTwo({Key? key}) : super(key: key);
 
-  HomeController controller = Get.find();
+  final HomeController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {

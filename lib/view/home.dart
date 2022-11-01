@@ -6,8 +6,12 @@ import 'package:get/get.dart';
 import 'package:getx_demo/view/screenone.dart';
 import 'package:getx_demo/view/screentwo.dart';
 
+import '../controller/homecontroller.dart';
+
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  final controller = Get.lazyPut(() => HomeController(), fenix: true);
 
   @override
   Widget build(BuildContext context) {

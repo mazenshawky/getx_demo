@@ -6,7 +6,7 @@ import '../controller/homecontroller.dart';
 class ScreenOne extends StatelessWidget {
   ScreenOne({Key? key}) : super(key: key);
 
-  final controller = Get.put(HomeController(), permanent: true);
+  final HomeController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
