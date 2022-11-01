@@ -8,7 +8,7 @@ import 'package:getx_demo/controller/homecontroller.dart';
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
 
-  HomeController controller = Get.put(HomeController());
+  HomeController controller = Get.put(HomeController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
