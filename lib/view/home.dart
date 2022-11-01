@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetBuilder<HomeController>(
+            GetX<HomeController>(
               init: HomeController(),
               builder: (controller) => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
                   ),
                   Center(
                     child: Text(
-                      "${controller.counter}",
+                      "${controller.counter.value}",
                       style: const TextStyle(fontSize: 20),
                     ),
                   ),
