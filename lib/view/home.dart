@@ -3,15 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/utils/my_bindings.dart';
 import 'package:getx_demo/view/screenone.dart';
 import 'package:getx_demo/view/screentwo.dart';
 
-import '../controller/homecontroller.dart';
-
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-
-  final controller = Get.lazyPut(() => HomeController(), fenix: true);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +20,8 @@ class HomePage extends StatelessWidget {
           Center(
             child: MaterialButton(
               onPressed: (){
-                Get.to(() => ScreenOne());
+                Get.to(() => ScreenOne(), binding: MyBindings());
+                // Get.to(() => ScreenOne());
               },
               color: Colors.red,
               textColor: Colors.white,
