@@ -1,18 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:getx_demo/main.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+import 'home.dart';
+
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Login'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -20,12 +19,12 @@ class Home extends StatelessWidget {
           Center(
             child: MaterialButton(
               onPressed: (){
-                sharedPref!.clear();
-                Get.offAllNamed("/");
+                sharedPref!.setString("id", "1");
+                Get.offNamed("home");
               },
-              color: Colors.red,
+              color: Colors.blue,
               textColor: Colors.white,
-              child: const Text('Sign out'),
+              child: const Text('Login'),
             ),
           ),
         ],

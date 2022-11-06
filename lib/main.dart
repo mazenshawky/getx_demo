@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/middleware/auth_middleware.dart';
 import 'package:getx_demo/view/home.dart';
+import 'package:getx_demo/view/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+SharedPreferences? sharedPref;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  sharedPref = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 
@@ -17,10 +24,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: () => const Home()),
+        GetPage(name: "/", page: () => const Login(), middlewares: [AuthMiddleWare()]),
+        GetPage(name: "/home", page: () => const Home()),
       ],
     );
   }
