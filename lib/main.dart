@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/services/settings_services.dart';
 import 'package:getx_demo/view/home.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   runApp(const MyApp());
+}
+
+Future initialServices() async {
+  await Get.putAsync(() => SettingsServices().init());
 }
 
 class MyApp extends StatelessWidget {
